@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# build-plugin-documentation.sh
+# build-documentation.sh
 # 
 # Copyright (c) 2014  Josef Kufner <jk@frozen-doe.net>
 # 
@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-if pwd | grep -q '/plugin/[^/]*/doc'
+if [ -d "./doc" ]
 then
 
 	(
@@ -39,26 +39,8 @@ then
 
 	) | ( cd .. && doxygen - )
 
-elif pwd | grep -q '/lib/cascade/[^/]*/doc'
-then
-
-	(
-		# get Doxyfile
-		sed 's|\(=[\t ]*\)doc/|\1../../../core/doc/|' ../../../../core/doc/Doxyfile
-
-		# override few options
-		echo "PROJECT_NAME=\"`head -n 1 ../README.md`\""
-		echo "PROJECT_BRIEF="
-		echo "PROJECT_NUMBER=\"`git describe --tag --match "v[0-9]*"`\""
-
-		# include stdin
-		[ "$0" == "-" ] && cat
-
-		echo Generating documentation ... it may take a few more seconds ... >&2
-
-	) | ( cd .. && doxygen - )
 else
-	echo "This script must be run from plugin's doc directory." >&2
+	echo "Documentation directory not found. This script must be run from project's root directory." >&2
 	exit 1
 fi
 
