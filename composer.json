@@ -1,0 +1,18 @@
+{
+    "name": "cascade/doc-tools",
+    "description": "Cascade documentation tools",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Josef Kufner",
+            "email": "josef@kufner.cz"
+        }
+    ],
+    "extra": {
+    },
+    "require": {
+    },
+    "autoload": {
+    }
+}
+
