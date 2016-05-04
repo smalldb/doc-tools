@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# build-documentation.sh
+# build-documentation
 # 
 # Copyright (c) 2014  Josef Kufner <jk@frozen-doe.net>
 # 
@@ -17,30 +17,44 @@
 # limitations under the License.
 #
 
-if [ -d "./doc" ]
+if [ -d "./doc" ] && [ -f ./README.md ]
 then
+	basedir="$(dirname "$(dirname "$0")")"
+	echo "Basedir: $basedir"
 
 	(
-		# get Doxyfile
-		sed 's|\(=[\t ]*\)doc/|\1../../core/doc/|' ../../../core/doc/Doxyfile
+		## Get Doxyfile
+		#sed 's|\(=[\t ]*\)doc/|\1../../core/doc/|' ../../../core/doc/Doxyfile
 
-		# override few options
-		echo "PROJECT_NAME=\"`head -n 1 ../README.md`\""
+		# Get default Doxyfile
+		sed "s|\(=[\\t ]*\\)doc/|\\1$basedir/doc/|" "$basedir/doc/Doxyfile"
+
+		# Override few options
+		echo "PROJECT_NAME=\"`head -n 1 ./README.md`\""
 		echo "PROJECT_BRIEF="
 		echo "PROJECT_NUMBER=\"`git describe --tag --match "v[0-9]*"`\""
 
-		## add tagfiles (link other docs)
+		# Include Doxyfile if provided
+		if [ -e "doc/Doxyfile" ]
+		then
+			cat doc/Doxyfile
+		fi
+
+		## Add tagfiles (link other docs)
 		# echo "TAGFILES+=\"../../core/doc/doxygen/tagfile.xml=../../../../../core/doc/doxygen/html/\""
 
-		# include stdin
+		# Include stdin if provided
 		[ "$0" == "-" ] && cat
+
+		# Override output directory
+		echo "OUTPUT_DIRECTORY = ./doc/doxygen"
 
 		echo Generating documentation ... it may take a few more seconds ... >&2
 
-	) | ( cd .. && doxygen - )
+	) | doxygen - && echo -e "\nDocumentation generated.\n"
 
 else
-	echo "Documentation directory not found. This script must be run from project's root directory." >&2
+	echo "Documentation directory or README.md not found. This script must be run from project's root directory." >&2
 	exit 1
 fi
 

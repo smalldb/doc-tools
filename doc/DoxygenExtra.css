@@ -189,5 +189,6 @@ span.mlabel {
 #MSearchBox #MSearchField {
 	width: 10em;
 	padding: 0px 22px 0px 4px;
+	min-height: 19px;
 }
 
