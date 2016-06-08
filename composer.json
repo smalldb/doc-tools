@@ -1,6 +1,6 @@
 {
-    "name": "cascade/doc-tools",
-    "description": "Cascade documentation tools",
+    "name": "smalldb/doc-tools",
+    "description": "Smalldb documentation tools",
     "license": "Apache-2.0",
     "authors": [
         {
