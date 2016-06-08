@@ -1,4 +1,4 @@
-Cascade Documentation Tools
+Smalldb Documentation Tools
 ===========================
 
 Tools and shared configuration for Doxygen generated documentation.
