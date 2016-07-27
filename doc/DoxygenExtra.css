@@ -2,12 +2,21 @@ body, table, div, p, dl, td, th,
 .title,
 table.directory,
 #powerTip div {
-	font-family: "DejaVu Sans", sans-serif;
+	font-family: "Noto Sans", "DejaVu Sans", Verdana, sans-serif;
 	font-size: 1em;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
 	line-height: normal;
+}
+
+.contents p,
+.contents li,
+.contents dd,
+.contents dt {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: justify;
 }
 
 code, pre {
@@ -21,26 +30,52 @@ code {
 	border-radius: 3px;
 }
 
+.contents a,
+.contents a:visited {
+	color: #5176be;
+}
+
 #titlearea {
 	border: none;
 	border-bottom: 1px solid #5373B4;
 }
 
-.title {
-	font-size: 2em;
+div.contents,
+div.title {
+	max-width: 60em;
+	margin: 0em auto;
 }
 
-.contents p,
-.contents .section {
-	max-width: 55em;
+div.header {
+	text-align: center;
+	border: none;
+	padding: 2em 0em 3em 0em;
+	background: transparent;
 }
 
-h1, h2, h3, h4, h5, h6 {
+div.title, h1, h2, h3, h4, h5, h6 {
+	font-family: "URW Palladio L", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #5176be;
 	-webkit-transition: none;
 	-moz-transition: none;
 	-ms-transition: none;
 	-o-transition: none;
 	transition: none;
+	margin-top: 1.5em;
+}
+
+.title, h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: normal;
 }
 
 
@@ -107,6 +142,14 @@ h1, h2, h3, h4, h5, h6 {
 .memberdecls {
 	width: 100%;
 	box-sizing: border-box: 
+}
+
+.memberdecls .memSeparator {
+	padding: 0px;
+}
+
+.memberdecls .mdescRight {
+	padding-left: 3em;
 }
 
 .memitem {
@@ -190,5 +233,9 @@ span.mlabel {
 	width: 10em;
 	padding: 0px 22px 0px 4px;
 	min-height: 19px;
+}
+
+hr.footer {
+	margin-top: 6em;
 }
 
