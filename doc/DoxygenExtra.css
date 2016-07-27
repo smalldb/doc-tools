@@ -30,6 +30,11 @@ code {
 	border-radius: 3px;
 }
 
+.contents img,
+.contents iframe {
+	max-width: 100%;
+}
+
 .contents a,
 .contents a:visited {
 	color: #5176be;
@@ -141,11 +146,27 @@ h3 {
 
 .memberdecls {
 	width: 100%;
-	box-sizing: border-box: 
+	box-sizing: border-box;
+}
+
+.memberdecls td,
+.memberdecls th {
+	background: transparent;
 }
 
 .memberdecls .memSeparator {
 	padding: 0px;
+	display: none;
+}
+
+.memberdecls .memItemLeft,
+.memberdecls .memItemRight {
+	padding-top: 1em;
+}
+
+.memberdecls .memDescLeft,
+.memberdecls .memDescRight {
+	padding-bottom: 0.5em;
 }
 
 .memberdecls .mdescRight {
