@@ -694,7 +694,7 @@ LAYOUT_FILE            = doc/DoxygenLayout.xml
 # search path. Do not use file names with spaces, bibtex cannot handle them. See
 # also \cite for info how to create references.
 
-CITE_BIB_FILES         = 
+CITE_BIB_FILES         = doc/*.bib
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
@@ -804,7 +804,7 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = 
+EXCLUDE                = ./vendor
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -820,7 +820,8 @@ EXCLUDE_SYMLINKS       = NO
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories for example use the pattern */test/*
 
-EXCLUDE_PATTERNS       = */doc/examples/*.php
+EXCLUDE_PATTERNS       = */doc/examples/*.php \
+                         *.json.php
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
@@ -858,6 +859,7 @@ EXAMPLE_RECURSIVE      = YES
 # \image command).
 
 IMAGE_PATH             = ./doc/figures \
+			 ./doc \
                          .
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
@@ -906,7 +908,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = ./README.md
+USE_MDFILE_AS_MAINPAGE = README.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
@@ -1003,7 +1005,7 @@ VERBATIM_HEADERS       = YES
 # classes, structs, unions or interfaces.
 # The default value is: YES.
 
-ALPHABETICAL_INDEX     = NO
+ALPHABETICAL_INDEX     = YES
 
 # The COLS_IN_ALPHA_INDEX tag can be used to specify the number of columns in
 # which the alphabetical index list will be split.
@@ -1018,7 +1020,7 @@ COLS_IN_ALPHA_INDEX    = 1
 # while generating the index headers.
 # This tag requires that the tag ALPHABETICAL_INDEX is set to YES.
 
-IGNORE_PREFIX          = 
+IGNORE_PREFIX          = $ __
 
 #---------------------------------------------------------------------------
 # Configuration options related to the HTML output

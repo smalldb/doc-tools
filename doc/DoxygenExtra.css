@@ -10,15 +10,6 @@ table.directory,
 	line-height: normal;
 }
 
-.contents p,
-.contents li,
-.contents dd,
-.contents dt {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	text-align: justify;
-}
-
 code, pre {
 	font-family: "DejaVu Sans Mono", monospace;
 }
@@ -28,6 +19,223 @@ code {
 	border: 1px solid #eee;
 	padding: 0em 0.3em;
 	border-radius: 3px;
+}
+
+a:hover,
+a:focus,
+.tabs .tablist a:hover,
+.tabs .tablist a:focus,
+.tabs2 .tablist a:hover,
+.tabs2 .tablist a:focus,
+.tabs3 .tablist a:hover,
+.tabs3 .tablist a:focus,
+.navpath li.navelem a:hover,
+.navpath li.navelem a:focus {
+	text-decoration: underline;
+}
+
+.tabs, .tabs2, .tabs3, .navpath,
+.tabs .tablist,
+.tabs .tablist li,
+.tabs .tablist li a,
+.tabs2 .tablist,
+.tabs2 .tablist li,
+.tabs2 .tablist li a,
+.tabs3 .tablist,
+.tabs3 .tablist li,
+.tabs3 .tablist li a,
+.navpath ul,
+.navpath li,
+.navpath li.navelem,
+.navpath li.navelem a {
+	background: transparent;
+	border: none;
+	color: inherit;
+	font: inherit;
+	height: auto;
+	line-height: 2.5em;
+	outline: none;
+	padding: 0em;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+	.tabs .tablist li a,
+	.tabs2 .tablist li a,
+	.tabs3 .tablist li a {
+		padding: 0em 1em;
+	}
+
+	.tabs2,
+	.tabs3 {
+		border-bottom: 1px solid #ddd;
+		color: #666;
+	}
+
+	.tabs3 {
+		color: #999;
+	}
+
+	.tabs2 li.current a,
+	.tabs3 li.current a {
+		color: #000;
+		border-bottom: 3px solid #79a2e0;
+	}
+
+
+#projectname,
+#projectbrief,
+#projectnumber {
+	font: inherit;
+	color: inherit;
+}
+
+	#projectname {
+		font-size: 250%;
+		color: #000;
+	}
+
+	#projectnumber {
+		font-size: 40%;
+		color: #666;
+	}
+
+#top {
+}
+
+	#top #titlearea {
+		border: none;
+		border-bottom: 1px solid #5373B4;
+	}
+
+	#top #navrow1.tabs {
+		color: #fff;
+		border-bottom: 2px solid #5176be;
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5176be+0,79a2e0+100 */
+		background: #5176be; /* Old browsers */
+		background: -moz-linear-gradient(top,  0%, #79a2e0 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #5176be 0%,#79a2e0 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #5176be 0%,#79a2e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5176be', endColorstr='#79a2e0',GradientType=0 ); /* IE6-9 */
+	}
+
+	#navrow1 .tablist li.current {
+		position: relative;
+	}
+
+		#navrow1 .tablist li.current a {
+			text-shadow: none;
+		}
+
+		#navrow1 .tablist li.current a:after {
+			display: block;
+			content: ' ';
+			position: absolute;
+			bottom: $base-line-height;
+			left: 50%;
+			margin-left: -10px;
+			margin-top: -8px;
+
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0px 10px 10px 10px;
+			border-color: transparent transparent #fff transparent;
+		}
+
+	#nav-path {
+	}
+
+		#nav-path,
+		#nav-path ul,
+		#nav-path ul li,
+		#nav-path ul li a {
+			background: transparent;
+			color: inherit;
+			border: none;
+			font: inherit;
+			line-height: 2.5em;
+			color: #666;
+			padding: 0em;
+			margin: 0em;
+		}
+
+		#nav-path ul {
+			padding-left: 1em;
+			border-bottom: 1px solid #ddd;
+		}
+
+		#nav-path ul li a {
+			padding: 0em 0.3em;
+		}
+
+		#nav-path ul li.navelem a:before {
+			content: '╱';
+			display: inline-block;
+			font-size: 1.5em;
+			padding-right: 0.3em;
+			text-decoration: none !important;
+			color: #ddd;
+		}
+
+
+div.contents,
+div.title {
+	max-width: 60em;
+	margin: 0em auto;
+	padding: 0em 1em;
+}
+
+div.contents {
+	padding-top: 2em;
+}
+
+
+div.header {
+	text-align: center;
+	border: none;
+	padding: 2em 0em 3em 0em;
+	background: transparent;
+}
+
+div.title, h1, h2, h3, h4, h5, h6,
+h2.groupheader,
+h3.groupheader {
+	font-family: "URW Palladio L", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #5176be;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+	margin-top: 1.75em;
+	padding: 0px;
+	border: none;
+}
+
+.title, h1 {
+	font-size: 2.5em;
+	font-weight: normal;
+}
+
+h2, h2.groupheader {
+	font-size: 2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+.contents p,
+.contents li,
+.contents dd,
+.contents dt {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: justify;
 }
 
 .contents img,
@@ -40,113 +248,21 @@ code {
 	color: #5176be;
 }
 
-#titlearea {
-	border: none;
-	border-bottom: 1px solid #5373B4;
+div.summary {
+	font: inherit;
+	font-size: 85%;
+	margin: -2em 0.8em 1em 0em;
+	color: #ddd;
 }
-
-div.contents,
-div.title {
-	max-width: 60em;
-	margin: 0em auto;
-}
-
-div.header {
-	text-align: center;
-	border: none;
-	padding: 2em 0em 3em 0em;
-	background: transparent;
-}
-
-div.title, h1, h2, h3, h4, h5, h6 {
-	font-family: "URW Palladio L", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	color: #5176be;
-	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
-	transition: none;
-	margin-top: 1.5em;
-}
-
-.title, h1 {
-	font-size: 2.5em;
-}
-
-h2 {
-	font-size: 2em;
-	font-weight: normal;
-}
-
-h3 {
-	font-size: 1.5em;
-	font-weight: normal;
-}
-
-
-#projectname,
-#projectbrief,
-#projectnumber {
-	font-family: inherit;
-	font-weight: normal;
-}
-
-
-.navpath ul,
-.navpath li,
-.tabs, .tabs2, .tabs3 {
-	font-family: inherit;
-	background: #C4CFE5;
-	text-shadow: none;
-	text-decoration: none;
-	outline: none;
-	height: auto;
-}
-
-.navpath ul,
-.navpath li,
-.tablist li {
-	background: #C4CFE5;
-	line-height: 240%;
-	list-style: none;
-	height: auto;
-}
-
-.navpath li.navelem a,
-.tablist a {
-	text-shadow: none;
-	background: transparent;
-	border-right: 1px solid #5373B4;
-	height: auto;
-}
-
-.navpath li.navelem a:hover,
-.navpath li.navelem a:focus,
-.tablist a:hover,
-.tablist a:focus {
-	background: transparent;
-	color: #6884BD;
-	text-shadow: none;
-}
-
-.navpath {
-	border-top: 1px solid #5373B4;
-}
-
-.navpath li.navelem {
-	background-image:url('bc_s.png');
-	background-repeat:no-repeat;
-	background-position:right;
-}
-
-.navpath li.navelem a {
-	border: none;
-}
-
+	div.summary a {
+		color: #888;
+		margin: 0em 0.2em;
+	}
 
 .memberdecls {
 	width: 100%;
 	box-sizing: border-box;
+	margin: 3em 0em 1em 0em;
 }
 
 .memberdecls td,
@@ -179,17 +295,18 @@ h3 {
         -ms-transition: none;
         -o-transition: none;
         transition: none;
+	margin: 0em 0em 2em 0em;
 }
 
 .memproto, dl.reflist dt {
         padding: 0.5em 0em;
-	margin: 2em 0em 1em 0em;
+	margin: 1em 0em;
         color: #253555;
         font-weight: bold;
         text-shadow: none;
-	background: #FBFCFD;
-	border: 1px solid #C4CFE5;
-	border-left-width: 0.5em;
+	background: #f8fbff;
+	border: 1px solid #79a2e0;
+	border-left-width: 0.3em;
 	border-right: none;
         /* opera specific markup */
         box-shadow: none;
@@ -220,11 +337,11 @@ h3 {
 span.mlabel {
         background-color: #728DC1;
 	border-color: #728DC1;
-	border-radius: 5px;
+	border-radius: 0px;
 }
 
-#MSearchBox .left,
 #MSearchBox #MSearchField,
+#MSearchBox .left,
 #MSearchBox .right {
 	display: inline;
 	float: none;
@@ -232,31 +349,98 @@ span.mlabel {
 	background: #fff;
 	outline: none;
 	height: auto;
+	vertical-align: baseline;
 }
 
-#MSearchBox,
-#MSearchBox * {
-	font-family: inherit;
-}
+	#MSearchBox,
+	#MSearchBox * {
+		font: inherit;
+	}
 
-#MSearchBox {
-	background: #fff;
-	border: 1px solid #90A5CE;
-	border-radius: 5px;
-	height: auto;
-	width: auto;
-	right: 1em;
-	margin: 0.4em 0em;
-	padding: 0px;
-}
+	#MSearchBox {
+		background: #fff;
+		outline: 1px solid #5176be;
+		border: none;
+		border-radius: 0px;
+		width: auto;
+		right: 1em;
+		margin: 0.35em 0em;
+		padding: 0px;
+		line-height: 1.8em;
+	}
 
-#MSearchBox #MSearchField {
-	width: 10em;
-	padding: 0px 22px 0px 4px;
-	min-height: 19px;
-}
+	#MSearchBox .left,
+	#MSearchBox .right {
+		left: auto;
+		right: auto;
+		height: auto;
+		width: auto;
+	}
+	#MSearchBox .left a,
+	#MSearchBox .right a,
+	#MSearchBox .left img,
+	#MSearchBox .right img {
+		position: static;
+		left: auto;
+		height: auto;
+		width: auto;
+	}
+	
+	#MSearchBox .left a,
+	#MSearchBox .right a {
+	}
+
+	#MSearchBox .left img,
+	#MSearchBox .right img {
+		display: inline;
+		vertical-align: middle;
+		padding: 0em 3px;
+	}
+
+	#MSearchBox .right {
+		min-width: 26px;
+		display: inline-block;
+	}
+
+	#MSearchBox #MSearchField {
+		width: 10em;
+		padding: 0px 22px 0px 4px;
+		margin: 0em;
+		min-height: 19px;
+	}
+
+	#MSearchSelectWindow,
+	#MSearchSelectWindow a {
+		font: inherit;
+	}
+
+	#MSearchResultsWindow {
+		position: static; /* Doxygen's JS will set position on this element, this will make it ineffective. */
+		border: none;
+		padding: 0px;
+	}
+
+	#MSearchResults {
+		position: absolute;
+		right: 1em;
+		background: #f8fbff;
+		border: 1px solid #5176be;
+		box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+	}
 
 hr.footer {
 	margin-top: 6em;
+	border: none;
+	border-top: 1px solid #ddd;
+}
+address.footer {
+	color: #888;
+	text-align: center;
+	margin: 1em;
+}
+address.footer img {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	opacity: 0.6;
 }
 
