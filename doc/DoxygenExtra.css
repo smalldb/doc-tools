@@ -444,3 +444,18 @@ address.footer img {
 	opacity: 0.6;
 }
 
+
+.json_schema_node {
+	margin: 1em 0em;
+	color: #aaa;
+}
+	.json_schema_node_title {
+		color: #000;
+	}
+	.json_schema_node_type {
+		color: #aaa;
+	}
+	.json_schema_node_is_required {
+		color: #d88;
+	}
+
