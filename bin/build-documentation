@@ -51,7 +51,9 @@ then
 
 		echo Generating documentation ... it may take a few more seconds ... >&2
 
-	) | doxygen - && echo -e "\nDocumentation generated.\n"
+	) | doxygen - \
+		&& sed -ri '/<div class="dynheader">/N;s/<div class="dynheader">\s*([^<]*):<\/div>/<h3>\1<\/h3>/' ./doc/doxygen/html/*.html \
+		&& echo -e "\nDocumentation generated.\n"
 
 else
 	echo "Documentation directory or README.md not found. This script must be run from project's root directory." >&2
