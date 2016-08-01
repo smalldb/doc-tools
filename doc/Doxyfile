@@ -238,8 +238,9 @@ TAB_SIZE               = 8
 # "Side Effects:". You can put \n's in the value part of an alias to insert
 # newlines.
 
-ALIASES                = "FIXME=\"\todo\"" \
-                         "TODO=\"\todo\""
+ALIASES                += "FIXME=\"\todo\""
+ALIASES                += "TODO=\"\todo\""
+ALIASES                += "var=@see"
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
@@ -877,7 +878,7 @@ IMAGE_PATH             = ./doc/figures \
 # code is scanned, but not when the output code is generated. If lines are added
 # or removed, the anchors will not be placed correctly.
 
-INPUT_FILTER           = "sed -e '/^[ \t*@]*namespace/!s/\>\\\([A-Z]\)/::\1/g' -e 's/\s\(\/\/\/\?\s*\|\*\s*\)\(FIXME\|TODO\):\?/ \/\/\/ @todo/i' -e 's/@var\s/@see /'"
+INPUT_FILTER           = "sed -e '/^[ \t*@]*namespace/!s/\>\\\([A-Z]\)/::\1/g' -e 's/\s\(\/\/\/\?\s*\|\*\s*\)\(FIXME\|TODO\):\?/ \/\/\/ @todo/i'"
 
 # The FILTER_PATTERNS tag can be used to specify filters on a per file pattern
 # basis. Doxygen will compare the file name with each pattern and apply the
