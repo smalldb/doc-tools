@@ -470,4 +470,7 @@ dl.todo {
 	.json_schema_node_is_required {
 		color: #d88;
 	}
+	.json_schema_node_annotation {
+		color: #79a2e0;
+	}
 
