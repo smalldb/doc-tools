@@ -444,6 +444,18 @@ address.footer img {
 	opacity: 0.6;
 }
 
+dl.warning, dl.attention {
+	border-color: #f84;
+}
+
+dl.note {
+	border-color: #fd8;
+}
+
+dl.todo {
+	border-color: #79a2e0;
+}
+
 
 .json_schema_node {
 	margin: 1em 0em;
