@@ -463,14 +463,15 @@ dl.todo {
 	list-style: square;
 }
 
-	.json_schema_node.json_schema_node_not_annotated .json_schema_node_title {
-		color: #000;
-	}
 	.json_schema_node_type,
 	.json_schema_node.json_schema_node_annotated .json_schema_node_title {
 		color: #aaa;
 	}
-	.json_schema_node_is_required {
+	.json_schema_node.json_schema_node_not_annotated > .json_schema_node_title {
+		color: #000;
+	}
+	.json_schema_node_is_required,
+	.json_schema_node_not_allowed {
 		color: #d88;
 	}
 	.json_schema_node_annotation {
