@@ -878,7 +878,7 @@ IMAGE_PATH             = ./doc/figures \
 # code is scanned, but not when the output code is generated. If lines are added
 # or removed, the anchors will not be placed correctly.
 
-INPUT_FILTER           = "sed -e '/^[ \t*@]*namespace/!s/\>\\\([A-Z]\)/::\1/g' -e 's/\s\(\/\/\/\?\s*\|\*\s*\)\(FIXME\|TODO\):\?/ \1 @\2/i'"
+INPUT_FILTER           = "sed -e '/^[ \t*@]*namespace/!s/\>\\\([A-Z]\)/::\1/g' -e 's/\s\(\/\/\/\?\s*\|\*\s*\)\(FIXME\|TODO\):\?/ \1 @\2/i' -e 's/\(\s\)Smalldb\(\s\)/\1%Smalldb\1/g'"
 
 # The FILTER_PATTERNS tag can be used to specify filters on a per file pattern
 # basis. Doxygen will compare the file name with each pattern and apply the
