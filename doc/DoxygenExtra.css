@@ -459,21 +459,25 @@ dl.todo {
 
 .json_schema_node {
 	margin: 1em 0em;
-	color: #aaa;
 	list-style: square;
 }
 
-	.json_schema_node_type,
-	.json_schema_node.json_schema_node_annotated .json_schema_node_title {
-		color: #aaa;
+	.json_schema_node_type {
+		color: #888;
 	}
-	.json_schema_node.json_schema_node_not_annotated > .json_schema_node_title {
-		color: #000;
+	.json_schema_node.json_schema_node_annotated .json_schema_node_title {
+	}
+	.json_schema_node.json_schema_node_not_annotated > .json_schema_node_title b {
+		border-left: 0.3em solid #fd8;
+		padding-left: 0.2em;
+		margin-left: -0.5em;
+		background: #fff6bf;
 	}
 	.json_schema_node_is_required,
 	.json_schema_node_not_allowed {
 		color: #d88;
 	}
 	.json_schema_node_annotation {
+		color: #79a2e0;
 	}
 
