@@ -1040,6 +1040,10 @@ GENERATE_HTML          = YES
 
 HTML_OUTPUT            = html
 
+# Disable JS navigation
+# See https://bugzilla.gnome.org/show_bug.cgi?id=776964
+HTML_DYNAMIC_MENUS     = NO
+
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).
 # The default value is: .html.
