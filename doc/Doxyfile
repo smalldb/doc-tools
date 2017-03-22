@@ -839,7 +839,8 @@ EXCLUDE_SYMBOLS        =
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           = ./doc/
+#EXAMPLE_PATH           = ./doc/
+EXAMPLE_PATH           =
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -859,9 +860,10 @@ EXAMPLE_RECURSIVE      = YES
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             = ./doc/figures \
-			 ./doc \
-                         .
+#IMAGE_PATH             = ./doc/figures \
+#			 ./doc \
+#                         .
+IMAGE_PATH             =
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -878,7 +880,7 @@ IMAGE_PATH             = ./doc/figures \
 # code is scanned, but not when the output code is generated. If lines are added
 # or removed, the anchors will not be placed correctly.
 
-INPUT_FILTER           = "sed -e '/^[ \t*@]*namespace/!s/\>\\\([A-Z]\)/::\1/g' -e 's/\s\(\/\/\/\?\s*\|\*\s*\)\(FIXME\|TODO\):\?/ \1 @\2/i' -e 's/\(\s\)Smalldb\(\s\)/\1%Smalldb\1/g'"
+INPUT_FILTER           = "sed -e '/^[ \t*@]*namespace/!s/\>\\\([A-Z]\)/::\1/g' -e 's/\s\(\/\/\/\?\s*\|\*\s*\)\(FIXME\|TODO\):\?/ \1 @\2/i' -e 's/\(\s\)Smalldb\(\s\)/\1%Smalldb\2/g' -e 's/\(\s\)smalldb\(\s\)/\1%smalldb\2/g' -e 's/@smalldb/\\@smalldb/g'"
 
 # The FILTER_PATTERNS tag can be used to specify filters on a per file pattern
 # basis. Doxygen will compare the file name with each pattern and apply the
@@ -2009,7 +2011,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       = ./doc/doxygen/tagfile.xml
+#GENERATE_TAGFILE       = ./doc/doxygen/tagfile.xml
 
 # If the ALLEXTERNALS tag is set to YES all external class will be listed in the
 # class index. If set to NO only the inherited external classes will be listed.

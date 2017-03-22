@@ -17,15 +17,22 @@
 # limitations under the License.
 #
 
-if [ -d "./doc" ] && [ -f ./README.md ]
+set -e
+
+if [ -n "$1" ]
+then
+	doc_dir="$1"
+else
+	doc_dir="./doc"
+fi
+
+if [ -d "$doc_dir" ] && [ -f ./README.md ]
 then
 	basedir="$(dirname "$(dirname "$0")")"
-	echo "Basedir: $basedir"
+	echo "Base dir: $basedir"
+	echo "Doc dir: $doc_dir"
 
 	(
-		## Get Doxyfile
-		#sed 's|\(=[\t ]*\)doc/|\1../../core/doc/|' ../../../core/doc/Doxyfile
-
 		# Get default Doxyfile
 		sed "s|\(=[\\t ]*\\)doc/|\\1$basedir/doc/|" "$basedir/doc/Doxyfile"
 
@@ -34,25 +41,30 @@ then
 		echo "PROJECT_BRIEF="
 		echo "PROJECT_NUMBER=\"`git describe --tag --match "v[0-9]*"`\""
 
+		echo "INPUT += $doc_dir"
+		echo "EXAMPLE_PATH += $doc_dir"
+		echo "GENERATE_TAGFILE = $doc_dir/doxygen/tagfile.xml"
+		echo "IMAGE_PATH = $doc_dir/figures $doc_dir ."
+
 		# Include Doxyfile if provided
-		if [ -e "doc/Doxyfile" ]
+		if [ -e "$doc_dir/Doxyfile" ]
 		then
-			cat doc/Doxyfile
+			cat "$doc_dir/Doxyfile"
 		fi
 
 		## Add tagfiles (link other docs)
-		# echo "TAGFILES+=\"../../core/doc/doxygen/tagfile.xml=../../../../../core/doc/doxygen/html/\""
+		# echo "TAGFILES+=\"../../core/$doc_dir/doxygen/tagfile.xml=../../../../../core/$doc_dir/doxygen/html/\""
 
 		# Include stdin if provided
 		[ "$0" == "-" ] && cat
 
 		# Override output directory
-		echo "OUTPUT_DIRECTORY = ./doc/doxygen"
+		echo "OUTPUT_DIRECTORY = $doc_dir/doxygen"
 
 		echo Generating documentation ... it may take a few more seconds ... >&2
 
 	) | doxygen - \
-		&& sed -ri '/<div class="dynheader">/N;s/<div class="dynheader">\s*([^<]*):<\/div>/<h3>\1<\/h3>/' ./doc/doxygen/html/*.html \
+		&& sed -ri '/<div class="dynheader">/N;s/<div class="dynheader">\s*([^<]*):<\/div>/<h3>\1<\/h3>/' "$doc_dir"/doxygen/html/*.html \
 		&& echo -e "\nDocumentation generated.\n"
 
 else
