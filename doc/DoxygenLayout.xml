@@ -25,7 +25,7 @@
       <tab type="globals" visible="yes" title="" intro=""/>
     </tab>
     <tab type="examples" visible="yes" title="" intro=""/>  
-    <tab type="classmembers" visible="yes" title="Index" intro=" "/>
+    <tab type="classmembers" visible="no" title="Index" intro=" "/>
   </navindex>
 
   <!-- Layout definition for a class page -->

@@ -44,6 +44,10 @@ a:focus,
 .tabs3 .tablist,
 .tabs3 .tablist li,
 .tabs3 .tablist li a,
+#main-nav,
+#main-nav #main-menu,
+#main-nav #main-menu li,
+#main-nav #main-menu li a,
 .navpath ul,
 .navpath li,
 .navpath li.navelem,
@@ -60,6 +64,20 @@ a:focus,
 	text-shadow: none;
 }
 
+	#main-nav #main-menu li ul li,
+	#main-nav #main-menu li ul li a {
+		color: #000;
+	}
+
+	#main-nav #main-menu li ul li a:hover,
+	#main-nav #main-menu li ul li a:focus,
+	#main-nav #main-menu li ul li a.highlighted,
+	#main-nav #main-menu li ul li a.highlighted * {
+		color: #fff;
+		background: #5176be;
+	}
+
+	#main-nav #main-menu li a,
 	.tabs .tablist li a,
 	.tabs2 .tablist li a,
 	.tabs3 .tablist li a {
@@ -108,7 +126,8 @@ a:focus,
 		border-bottom: 1px solid #5373B4;
 	}
 
-	#top #navrow1.tabs {
+	#top #navrow1.tabs,
+	#top #main-nav #main-menu {
 		color: #fff;
 		border-bottom: 2px solid #5176be;
 
@@ -120,15 +139,18 @@ a:focus,
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5176be', endColorstr='#79a2e0',GradientType=0 ); /* IE6-9 */
 	}
 
-	#navrow1 .tablist li.current {
+	#navrow1 .tablist li.current,
+	#main-nav #main-menu li.current {
 		position: relative;
 	}
 
-		#navrow1 .tablist li.current a {
+		#navrow1 .tablist li.current a,
+		#main-nav #main-menu li.current a {
 			text-shadow: none;
 		}
 
-		#navrow1 .tablist li.current a:after {
+		#navrow1 .tablist li.current a:after,
+		#main-nav #main-menu li.current a:after {
 			display: block;
 			content: ' ';
 			position: absolute;
@@ -340,6 +362,15 @@ span.mlabel {
 	border-radius: 0px;
 }
 
+#MSearchBox {
+	margin-top: 0.75em;
+}
+
+	#MSearchBox .right {
+		top: 0.75em;
+	}
+
+/*
 #MSearchBox #MSearchField,
 #MSearchBox .left,
 #MSearchBox .right {
@@ -415,7 +446,7 @@ span.mlabel {
 	}
 
 	#MSearchResultsWindow {
-		position: static; /* Doxygen's JS will set position on this element, this will make it ineffective. */
+		position: static; /* Doxygen's JS will set position on this element, this will make it ineffective. * /
 		border: none;
 		padding: 0px;
 	}
@@ -427,6 +458,8 @@ span.mlabel {
 		border: 1px solid #5176be;
 		box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
 	}
+
+*/
 
 hr.footer {
 	margin-top: 6em;
